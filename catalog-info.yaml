@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: ulykz9oos-python-gitops
+  description: This is GitOps manifest for ulykz9oos-python   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=ulykz9oos-python
+    backstage.io/kubernetes-id: ulykz9oos-python 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: ulykz9oos-python
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:ulykz9oos-python
